@@ -3,25 +3,6 @@ import { OrbitControls, RoundedBox, useGLTF } from "@react-three/drei";
 import { TextureLoader } from 'three'
 import { STLLoader } from "three/examples/jsm/Addons.js";
 
-
-import sandOclusion from "../assets/Ground080_1K-JPG/Ground080_1K-JPG_AmbientOcclusion.jpg";
-import sandColor from "../assets/Ground080_1K-JPG/Ground080_1K-JPG_Color.jpg"
-import sandDisplacement from "../assets/Ground080_1K-JPG/Ground080_1K-JPG_Displacement.jpg"
-import sandRoughness from "../assets/Ground080_1K-JPG/Ground080_1K-JPG_Roughness.jpg"
-import sandNormal from "../assets/Ground080_1K-JPG/Ground080_1K-JPG_NormalGL.jpg"
-
-import rockOclusion from "../assets/Rocks001_1K-JPG/Rocks001_1K-JPG_AmbientOcclusion.jpg";
-import rockColor from "../assets/Rocks001_1K-JPG/Rocks001_1K-JPG_Color.jpg"
-import rockDisplacement from "../assets/Rocks001_1K-JPG/Rocks001_1K-JPG_Displacement.jpg"
-import rockRoughness from "../assets/Ground080_1K-JPG/Ground080_1K-JPG_Roughness.jpg"
-import rockNormal from "../assets/Rocks001_1K-JPG/Rocks001_1K-JPG_NormalGL.jpg"
-
-import waterOclusion from "../assets/water/others_0020_ao_1k.jpg";
-import waterColor from "../assets/water/others_0020_color_1k.jpg";
-import waterRoughness from "../assets/water/others_0020_roughness_1k.jpg"
-import waterHeight from "../assets/water/others_0020_height_1k.png"
-import waterNormal from "../assets/water/others_0020_normal_opengl_1k.png"
-
 import soraModel from "../assets/chibi_sora_from_kingdom_hearts.glb?url";
 import HeartlessModel from "../assets/shadow_-_kingdom_hearts_ii.glb?url";
 import PalmModel from "../assets/palm_trees.glb?url";
@@ -32,6 +13,12 @@ import BridgeModel from "../assets/low_poly_dock_bridge.glb?url";
 import KingdomKeyModel from "../assets/kingdom_key.glb?url";
 import OathKeeperKeyModel from "../assets/oathkeeper_keyblade.stl?url";
 
+import Ground from "../assets/texturaTierra.webp?url";
+import RockTexture from "../assets/texturaRoca.webp?url";
+import WaterTexture from "../assets/TexturaAgua.webp?url";
+
+
+
 
 
 
@@ -41,50 +28,32 @@ export const IslandAnimated = () => {
 
   function Box() {
     
-  
-    const [colorMap, aoMap, displacementMap, roughnessMap, normalMap] = useLoader(TextureLoader, [
-      sandColor, // Color base
-      sandOclusion, // Oclusión ambiental
-      sandDisplacement, // Mapa de desplazamiento
-      sandRoughness, // Rugosidad
-      sandNormal, // Normal Map
-    ]);
-  
+    const color = useLoader(TextureLoader, Ground);
+   
     return (
       <mesh
       position={[0, -4, 0]}>
       <boxGeometry args={[90, 4, 90]} /> {/* Tierra clara con mayor tamaño */}
       <meshStandardMaterial
-          map={colorMap} // Color base
+          map={color} // Color base
           color={"#FFDFAF"} // Arena mas oscura
-          aoMap={aoMap} // Oclusión ambiental
-          normalMap={normalMap} // Mapa de normales
-          roughnessMap={roughnessMap} />
+          />
       </mesh>
     );
   }
 
   function Water() {
     
-  
-    const [colorMap, aoMap, displacementMap, roughnessMap, normalMap] = useLoader(TextureLoader, [
-      waterColor, // Color base del agua
-      waterOclusion, // Oclusión ambiental
-      waterHeight, // Mapa de altura (para relieve del agua)
-      waterRoughness, // Rugosidad del agua
-      waterNormal, // Normal Map (para efecto de ondas)
-    ]);
+    const color = useLoader(TextureLoader, WaterTexture);
   
     return (
-     
+      
       <RoundedBox args={[90, 4, 90]} radius={1}>
       <meshStandardMaterial
-        map={colorMap} // Color base
-        aoMap={aoMap} // Oclusión ambiental
-        normalMap={normalMap} // Mapa de normales (efecto de olas)
-        roughnessMap={roughnessMap} // Rugosidad del agua
+        map={color} // Color base
+        color={"#DFFAFE"} 
         transparent={true} // Hace que tenga transparencia
-        opacity={0.5} // Nivel de opacidad 
+        opacity={0.8} // Nivel de opacidad 
       />
     </RoundedBox>
   
@@ -92,13 +61,7 @@ export const IslandAnimated = () => {
   }
 
   function SandIsland() {
-    const [colorMap, aoMap, displacementMap, roughnessMap, normalMap] = useLoader(TextureLoader, [
-      sandColor,        // Color base
-      sandOclusion,     // Oclusión ambiental
-      sandDisplacement, // Mapa de desplazamiento (relieve)
-      sandRoughness,    // Rugosidad
-      sandNormal,       // Normal Map
-    ]);
+    const color = useLoader(TextureLoader, Ground);
   
     return (
       <mesh position={[0, 4, 0]}>
@@ -106,10 +69,8 @@ export const IslandAnimated = () => {
         <RoundedBox args={[60, 4, 60]} radius={1} smoothness={4}>
         
         <meshStandardMaterial 
-          map={colorMap} // Color bases
-          aoMap={aoMap} // Oclusión ambiental
-          normalMap={normalMap} // Mapa de normales
-          roughnessMap={roughnessMap} // Rugosidad
+          map={color}  
+          color={"#F7E1AF"} 
         />
         </RoundedBox>
 
@@ -118,123 +79,21 @@ export const IslandAnimated = () => {
   }
 
   function RockIsland() {
-    const [colorMap, aoMap, displacementMap, roughnessMap, normalMap] = useLoader(TextureLoader, [
-      rockColor, // Color base
-      rockOclusion, // Oclusión ambiental
-      rockDisplacement, // Mapa de desplazamiento
-      rockRoughness, // Rugosidad
-      rockNormal, // Normal Map
-    ]);
+    const color = useLoader(TextureLoader, RockTexture);
   
     return (
       <>
-      
-      <mesh position={[-33, 2, -34]}>
-        
-        <cylinderGeometry args={[2, 6, 8, 20]} /> 
-        
-        <meshStandardMaterial 
-          
-          map={colorMap} // Color base
-          aoMap={aoMap} // Oclusión ambiental
-          normalMap={normalMap} // Mapa de normales
-          roughnessMap={roughnessMap}
-          roughness={0.8} 
-          metalness={0.2}  
-        />
-      </mesh>
-
       <mesh position={[-10, 2, -35]}>
         
         <icosahedronGeometry args={[5, 0]} />
         
         <meshStandardMaterial 
           
-          map={colorMap} // Color base
-          aoMap={aoMap} // Oclusión ambiental
-          normalMap={normalMap} // Mapa de normales
-          roughnessMap={roughnessMap}
-          roughness={0.8} 
-          metalness={0.2}  
+          map={color} // Color base  
         />
       </mesh>
 
-      <mesh position={[37, 2, -10]}>
-        
-        <icosahedronGeometry args={[5, 0]} />
-        
-        <meshStandardMaterial 
-          
-          map={colorMap} // Color base
-          aoMap={aoMap} // Oclusión ambiental
-          normalMap={normalMap} // Mapa de normales
-          roughnessMap={roughnessMap}
-          roughness={0.8} 
-          metalness={0.2}  
-        />
-      </mesh>
-      
-
-      <mesh position={[-35, 2, 15]}>
-        
-        <icosahedronGeometry args={[5, 0]} />
-        
-        <meshStandardMaterial 
-          
-          map={colorMap} // Color base
-          aoMap={aoMap} // Oclusión ambiental
-          normalMap={normalMap} // Mapa de normales
-          roughnessMap={roughnessMap}
-          roughness={0.8} 
-          metalness={0.2}  
-        />
-      </mesh>
-      
-      <mesh position={[-35, 2, 35]}>
-        
-        <icosahedronGeometry args={[5, 0]} />
-        
-        <meshStandardMaterial 
-          
-          map={colorMap} // Color base
-          aoMap={aoMap} // Oclusión ambiental
-          normalMap={normalMap} // Mapa de normales
-          roughnessMap={roughnessMap}
-          roughness={0.8} 
-          metalness={0.2}  
-        />
-      </mesh>
-
-      <mesh position={[35, 2, 36]}>
-        
-        <icosahedronGeometry args={[5, 0]} />
-        
-        <meshStandardMaterial 
-          
-          map={colorMap} // Color base
-          aoMap={aoMap} // Oclusión ambiental
-          normalMap={normalMap} // Mapa de normales
-          roughnessMap={roughnessMap}
-          roughness={0.8} 
-          metalness={0.2}  
-        />
-      </mesh>
-      <mesh position={[0, 2, 36]}>
-        
-        <icosahedronGeometry args={[5, 0]} />
-        
-        <meshStandardMaterial 
-          
-          map={colorMap} // Color base
-          aoMap={aoMap} // Oclusión ambiental
-          normalMap={normalMap} // Mapa de normales
-          roughnessMap={roughnessMap}
-          roughness={0.8} 
-          metalness={0.2}  
-        />
-      </mesh>
       </>
-      
       
     );
   }
@@ -350,11 +209,13 @@ function Gumi() {
   </>  
 ); }
 
+
+
   return (
     <>
-      <Canvas antialias={false} camera={{ position: [15, 15, -50], fov: 100 }}>
+      <Canvas  camera={{ position: [15, 15, -50], fov: 100 }}>
       {/* Iluminación */}
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={0.6} />
       <directionalLight position={[10, 10, 5]} intensity={1} />
 
 
@@ -362,7 +223,6 @@ function Gumi() {
       <Water/>
       <SandIsland/>
 
-       
       <Palm/>
       <Bridge/>
       <Sora/>
@@ -373,7 +233,6 @@ function Gumi() {
       <Chest/>
       <Rocks/>
       <RockIsland/>
-
       {/* Controles de la cámara */}
       <OrbitControls />
     </Canvas>

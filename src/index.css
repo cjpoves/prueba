@@ -5,6 +5,24 @@
 
 body {
   margin: 0;
+  
+   
+}
+header{
+  background: linear-gradient(to top right, #F7E1AF 0%, #E0FBFE 40%, #A1D4FF 100%);
+  padding: 80px;
+  display: flex;
+}
+.barraNavgeacion{
+  background-color: #228AB0;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+
+}
+
+.centerText{
+  text-align: center;
 }
 
 
