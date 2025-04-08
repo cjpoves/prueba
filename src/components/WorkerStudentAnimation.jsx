@@ -78,7 +78,7 @@ export const WorkerStudentAnimation = () => {
       }
 
       function Worker() {
-          const { scene } = useGLTF(WorkerModel , true); 
+          const { scene } = useGLTF(WorkerModel); 
         
           return (  <> 
           <primitive object={scene}
@@ -94,7 +94,7 @@ export const WorkerStudentAnimation = () => {
         ); }
 
         function TableChair() {
-          const { scene } = useGLTF(TableChairModel , true); 
+          const { scene } = useGLTF(TableChairModel); 
         
           return (  <> 
           <primitive object={scene}
@@ -110,7 +110,7 @@ export const WorkerStudentAnimation = () => {
         ); }
 
         function Computer() {
-          const { scene } = useGLTF(ComputerModel , true); 
+          const { scene } = useGLTF(ComputerModel); 
         
           return (  <> 
           <primitive object={scene}
@@ -127,7 +127,7 @@ export const WorkerStudentAnimation = () => {
         ); }
 
         function Git() {
-          const { scene } = useGLTF(GitModel , true); 
+          const { scene } = useGLTF(GitModel); 
         
           return (  <> 
           <primitive object={scene}
@@ -140,7 +140,7 @@ export const WorkerStudentAnimation = () => {
         ); }
 
         function React() {
-          const { scene } = useGLTF(ReactModel , true); 
+          const { scene } = useGLTF(ReactModel); 
         
           return (  <> 
           <primitive object={scene}
@@ -153,7 +153,7 @@ export const WorkerStudentAnimation = () => {
         ); }
 
         function GitHub() {
-          const { scene } = useGLTF(GitHubModel , true); 
+          const { scene } = useGLTF(GitHubModel); 
         
           return (  <> 
           <primitive object={scene}

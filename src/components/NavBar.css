@@ -1,0 +1,17 @@
+.barraNavgeacion{
+    background-color: #228AB0;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 30px;
+    color: white;
+    align-items: center;
+  
+  }
+
+  @media(max-width:500px) {
+    .barraNavgeacion {
+      gap: 10px;
+    }
+
+  }

@@ -1,0 +1,66 @@
+.EndContenedor {
+    height: 500px;
+   position: relative;
+   background: linear-gradient(
+    to top ,
+    #ffcd58 0%,      /* Arena */
+    #6EB5EE 35%,     /* Mar profundo */
+    #364F6B 75%,     /* Transición al cielo oscuro */
+    #1B262C 100%     /* Cielo nocturno */
+  );
+
+  display: grid;
+  justify-content: center;
+}
+
+.palmeraEnd {
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+    
+    
+    animation: vientoTronco 6s infinite ease-in-out;
+  }
+  
+  .palmera2End {
+    position: absolute;
+    bottom: 0;
+    right: 120px;
+    animation: vientoTronco 6s infinite ease-in-out;
+  }
+
+  .moon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    
+    
+  }
+  
+  
+  @keyframes vientoTronco {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(2.5deg);
+    }
+  }
+
+  .contacIcons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+  }
+
+  .gitHubIcon:hover {
+    transform: scale(1.2);
+  }
+  .cvIcon:hover {
+    transform: scale(1.2);
+  }
+  .linkedinIcon:hover {
+    transform: scale(1.2);
+  }

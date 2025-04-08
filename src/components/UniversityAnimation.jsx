@@ -18,7 +18,7 @@ export const UniversityAnimation = () => {
     
 
   function University() {
-    const { scene } = useGLTF(UniversityModel , true); 
+    const { scene } = useGLTF(UniversityModel); 
   
     return (  <> 
     <primitive object={scene}
@@ -53,7 +53,7 @@ export const UniversityAnimation = () => {
     }
 
     function Gabel() {
-      const { scene } = useGLTF(GabelModel , true); 
+      const { scene } = useGLTF(GabelModel); 
     
       return (  <> 
       <primitive object={scene}
@@ -68,7 +68,7 @@ export const UniversityAnimation = () => {
 
     
     function Justice() {
-      const { scene } = useGLTF(JusticeModel , true); 
+      const { scene } = useGLTF(JusticeModel); 
     
       return (  <> 
       <primitive object={scene}

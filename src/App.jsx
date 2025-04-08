@@ -1,6 +1,9 @@
 
-import { IslandAnimated } from "./components/IslandAnimated";
+import { End } from "./components/End";
+import { Experiencia } from "./components/Experiencia";
+import { Header } from "./components/Header";
 import { MiHistoria } from "./components/MiHistoria";
+import { NavBar } from "./components/NavBar";
 import { TecnologiasYProyectos } from "./components/TecnologiasYProyectos";
 function App() {
   
@@ -8,24 +11,15 @@ function App() {
 
   return (
     <>
-    <nav className="barraNavgeacion">
-      <a className="centerText" > Navegacion</a>
-    </nav>
-    <header>
-      <div>
-      <h1>Hola</h1>
-      <h1>Hola</h1>
-      <h1>Hola</h1>
-
-      </div>
-    
-
-      <IslandAnimated/>
-    </header>
+    <NavBar/>
+    <Header/>
+         
+    <MiHistoria/>
     <TecnologiasYProyectos/>
-      
-      <MiHistoria/>
      
+    <Experiencia/>
+
+     <End/>
     </>
   );
 }

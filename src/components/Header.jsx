@@ -1,162 +1,49 @@
+import "./Header.css"
+import { IslandAnimated } from "./IslandAnimated"
 
-import { useState } from "react"
-import "./TecnologiasYProyectos.css"
+export const Header = () => {
 
-export const TecnologiasYProyectos = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-    const tecnologias = [
-        {
-          name: "React",
-          icon: "src/assets/iconos/react-svgrepo-com.svg",
-          projects: [
-            { title: "Web Finanzas", image: "src/assets/Capturas paginas/WebFinanzasImagen.webp", url: "https://web-finanzas-react.netlify.app/" },
-            { title: "Restaurante", image: "src/assets/Capturas paginas/RestauranteImagen.webp", url: "https://restaurante-react-cjpoves.netlify.app/" },
-            { title: "Web Películas", image: "src/assets/Capturas paginas/BuscadorpeliculasImagen.webp", url: "https://web-peliculas-react-cjpoves.netlify.app/" },
-            { title: "Cat-Api", image: "src/assets/Capturas paginas/CatApiImagen.webp", url: "https://cat-api-cjpoves.netlify.app/" },
-            { title: "ToDo App", image: "src/assets/Capturas paginas/ToDoAppImagen.png", url: "https://to-do-app-react-cjpoves.netlify.app/" },
-            { title: "Timer Pradera", image: "src/assets/Capturas paginas/ContadorImagen.webp", url: "https://contador-cjpoves.netlify.app/" },
-        
-            ],
-        },
-        {
-          name: "Node.js",
-          icon: "src/assets/iconos/node-js-svgrepo-com.svg",
-          projects: [
-            { title: "Web Finanzas", image: "src/assets/Capturas paginas/WebFinanzasImagen.webp", url: "https://web-finanzas-react.netlify.app/" },
-            ,
-          ],
-        },
-        
-          {
-            name: "Firebase",
-            icon: "src/assets/iconos/firebase-svgrepo-com.svg",
-            projects: [
-              { title: "Restaurante", image: "src/assets/Capturas paginas/RestauranteImagen.webp", url: "https://restaurante-react-cjpoves.netlify.app/" },
-                { title: "Web Películas", image: "src/assets/Capturas paginas/BuscadorpeliculasImagen.webp", url: "https://web-peliculas-react-cjpoves.netlify.app/" },
-              ,
-            ],
-          },
-
-          {
-            name: "MySQL",
-            icon: "src/assets/iconos/mysql-logo-svgrepo-com.svg",
-            projects: [
-            { title: "Web Finanzas", image: "src/assets/Capturas paginas/WebFinanzasImagen.webp", url: "https://web-finanzas-react.netlify.app/" },
-              ,
-            ],
-          },
-
-          {
-            name: "JavaScript",
-            icon: "src/assets/iconos/javascript-svgrepo-com.svg",
-            projects: [
-              { title: "Web F1", image: "src/assets/Capturas paginas/Web-F1.webp", url: "https://web-f1-cjpoves.netlify.app/" },
-              { title: "Web Recetas", image: "src/assets/Capturas paginas/Web-Recetas-Js.webp", url: "https://pagina-recetas-javascript.netlify.app/" },
-              { title: "API Clima", image: "src/assets/Capturas paginas/Web-Clima-Js.webp", url: "https://api-clima-cjpoves.netlify.app/" },
-              ,
-            ],
-          },
-          {
-            name: "Git",
-            icon: "src/assets/iconos/git-svgrepo-com.svg",
-            projects: [
-             
-            ],
-          },
-          {
-            name: "GitHub",
-            icon: "src/assets/iconos/github-142-svgrepo-com.svg",
-            projects: [
-             
-            ],
-          },
-        
-      ];
-    
-      
-      
-        
-      
-        const prevTech = () => {
-          setCurrentIndex((prev) => (prev === 0 ? tecnologias.length - 1 : prev - 1));
-        };
-      
-        const nextTech = () => {
-          setCurrentIndex((prev) => (prev === tecnologias.length - 1 ? 0 : prev + 1));
-        };
-    
-
-        const currentTech = tecnologias[currentIndex];
-    return(
+    return (
         <>
-
-        <div id="TecnologiasYProyectos" className="showcase-container">
-
-        <div class="sunTecnlogias">
-        
-        <svg width="75px" height="75px" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--twemoji" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#FFAC33" d="M16 2s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2V2zm18 14s2 0 2 2s-2 2-2 2h-2s-2 0-2-2s2-2 2-2h2zM4 16s2 0 2 2s-2 2-2 2H2s-2 0-2-2s2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828s-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828s-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828s2.828 0 2.828 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zM16 32s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2v-2z"></path><circle fill="#FFAC33" cx="18" cy="18" r="10"></circle></g></svg>
+    <header>
+            <div class="sunMorning">
+            <svg width="90px" height="90px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g fill="#ffe62e"> <path d="M20.5 59.7l7-7.2c-2.5-.5-4.8-1.5-6.9-2.9l-.1 10.1"> </path> <path d="M43.5 4.3l-7 7.2c2.5.5 4.8 1.5 6.9 2.9l.1-10.1"> </path> <path d="M4.3 43.5l10.1-.1C13 41.3 12 39 11.5 36.5l-7.2 7"> </path> <path d="M59.7 20.5l-10.1.1c1.3 2.1 2.3 4.4 2.9 6.9l7.2-7"> </path> <path d="M4.3 20.5l7.2 7c.5-2.5 1.5-4.8 2.9-6.9l-10.1-.1"> </path> <path d="M59.7 43.5l-7.2-7c-.5 2.5-1.5 4.8-2.9 6.9l10.1.1"> </path> <path d="M20.5 4.3l.1 10.1c2.1-1.3 4.4-2.3 6.9-2.9l-7-7.2"> </path> <path d="M43.5 59.7l-.1-10.1C41.3 51 39 52 36.5 52.5l7 7.2"> </path> </g> <g fill="#ffce31"> <path d="M14.8 44l-4 9.3l9.3-4C18 47.8 16.2 46 14.8 44"> </path> <path d="M49.2 20l4-9.3l-9.2 4c2 1.5 3.8 3.3 5.2 5.3"> </path> <path d="M11.4 28.3L2 32l9.4 3.7c-.3-1.2-.4-2.4-.4-3.7s.1-2.5.4-3.7"> </path> <path d="M52.6 35.7L62 32l-9.4-3.7c.2 1.2.4 2.5.4 3.7c0 1.3-.1 2.5-.4 3.7"> </path> <path d="M20 14.8l-9.3-4l4 9.3c1.5-2.1 3.3-3.9 5.3-5.3"> </path> <path d="M44 49.2l9.3 4l-4-9.3C47.8 46 46 47.8 44 49.2"> </path> <path d="M35.7 11.4L32 2l-3.7 9.4c1.2-.2 2.5-.4 3.7-.4s2.5.1 3.7.4"> </path> <path d="M28.3 52.6L32 62l3.7-9.4c-1.2.3-2.4.4-3.7.4s-2.5-.1-3.7-.4"> </path> <circle cx="32" cy="32" r="19"> </circle> </g> </g></svg>
             
-       </div>
-        <h1 className="centerText"> Tecnologías y proyectos</h1>
+            </div>
+            
+          <div className="tituloContenedor centerText" >
+           
+          
+          <h1>Carlos Javier Poves</h1>
+          <h4>Desarrollador Web</h4>
+          
+    
+          </div>
 
-      {/* Carrusel */}
-      <div className="carousel">
-        <button onClick={prevTech} className="arrow left">‹</button>
-
-        <div className="carousel-track">
-
-          {tecnologias.map((tecnologia, index) => {
-            const isActive = index === currentIndex;
-            const isAdjacent =
-              index === (currentIndex + 1) % tecnologias.length ||
-              index === (currentIndex - 1 + tecnologias.length) % tecnologias.length;
-
-            return (
-              <div
-                key={tecnologia.name}
-                className={`tech-icon ${isActive ? "active" : isAdjacent ? "adjacent" : "hidden"}`}
-              >
-                <img src={tecnologia.icon} alt={tecnologia.name} />
-              </div>
-            );
-          })}
+          <div className="islandAnimation">
+        <IslandAnimated/>
 
 
         </div>
 
-        <button onClick={nextTech} className="arrow right">›</button>
-      </div>
-
-      {/* Proyectos */}
-      <div className="projectsContenedor">
-      <div className="projects">
-        {currentTech.projects.map((project) => (
-          <a
-            key={project.title}
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-card"
-          >
-            <img src={project.image} alt={project.title} />
-            <div className="project-title">{project.title}</div>
-          </a>
-        ))}
-      </div>
-
-      </div>
-     
-      <div class="palmeraTecnologias">
-            <svg width="94px" height="94px" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--noto" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M72.05 51.72l-10.38 6.95s8.25 9.59 10.63 22.8c1.54 8.52 2.75 16.12 1.74 23.34c-.41 2.95-3.26 8.9-4.08 10.9s-2 6.71 1.65 7.65s15.54 1.3 17.31 1.06s3.86-1.52 2.91-5.79c-.59-2.65-1.59-10.94-2.18-16.59c-.59-5.65-.95-16.53-5.87-29.89c-4.79-13-11.73-20.43-11.73-20.43z" fill="#dc8124"></path><path d="M81.6 109.06c5.36.31 8.76-.72 8.76-.72l.73 5.43s-3.28.93-9.45.54c-5.39-.34-10.26-1.81-10.26-1.81l2.01-5.13c-.01-.01 2.81 1.38 8.21 1.69z" fill="#c0711f"></path><path d="M74.2 94.33s.1 1.51.15 2.46c.05.96.07 2.44.07 2.44s4.05.47 7.25.34c5.24-.21 7.6-1.46 7.6-1.46s-.09-1.17-.24-2.55c-.14-1.39-.31-2.53-.31-2.53s-2.57 1.27-7.97 1.62c-3.85.25-6.55-.32-6.55-.32z" fill="#c0711f"></path><path d="M72.13 80.57s2.46.5 7.04-.49c4.45-.97 6.36-2.66 6.36-2.66s.42 1.3.67 2.3c.23.93.59 2.29.59 2.29s-1.8 1.77-6.68 2.73c-4.79.95-7.17.3-7.17.3s-.23-1.28-.39-2.23c-.19-1.08-.42-2.24-.42-2.24z" fill="#c0711f"></path><path d="M69.6 72.12s2.27.15 6.68-1.51c3.85-1.45 5.5-3.39 5.5-3.39l-5.42-11.9l-12.99 4.72l6.23 12.08z" fill="#a2672b"></path><path d="M69.37 57.5s10.04 3.21 14.47 4.69c4.43 1.48 7.96 2.22 7.96 2.22s1.39-2.76 1.88-5.14c.33-1.58.26-4.06.94-4.01c1.12.08 1.93 1.98 1.98 4.56c.04 2.22-.54 5.52-.54 5.52l4.69 1.28s1.21-1.74 1.89-4.51c.71-2.9.35-4 1.06-4.2c.79-.22 2.28.81 2 5.39c-.17 2.79-.64 4.38-.5 4.49c.23.18 2.49 1.02 4.54 1.6c2.05.57 4.15.94 4.15.94s3.71-16.72-6.65-23.47c-12.96-8.45-29.62-.9-29.62-.9l12.21-9.64s-.88-2.18-1.95-3.84c-1.22-1.9-2.85-3.11-2.54-3.54c.42-.6 2.94-.6 5.09 1.4c1.81 1.69 3.18 3.44 3.24 3.49l3.59-2.59s-.35-2.35-1.3-3.84c-.92-1.45-2.32-2.8-1.97-3c.74-.42 3.04.31 4.49 1.72c1.25 1.22 2.26 3.11 2.26 3.11l7.3-5s-5.33-8.45-16.57-8.04s-17.31 7.63-19.2 9.76s-4.02 6.73-4.02 6.73l.21-12.75s-1.75-.4-3.43-.6c-2.53-.3-4.29.22-4.33-.03c-.13-.89 1.45-2.19 3.94-2.72c2.44-.51 4.41-.21 4.41-.21l2.06-11.92s-4.59-.37-9.71 2.06c-3.31 1.57-7.15 4.29-9.7 8.7c-5.65 9.75-.2 20.25-.2 20.25s-7.98-8.3-21.25-5.17c-14.55 3.43-18.22 19.4-17.4 19.4c2.22 0 10.32.38 10.73.05c.21-.16.77-2.41 2.1-4.44c1.32-2.03 3.09-3.74 4.54-3.74c.75 0-.26 1.51-1.15 3.69c-.9 2.22-1.4 4.69-1.4 4.69h7.22s1.52-7.31 4.06-7.83c1.09-.22.35 2.13.08 3.93c-.28 1.86-.44 3.91-.44 3.91l9.14.29s-11.75.71-19.9 8.15c-8.43 7.68-9.31 18.36-8.57 23.69s1.48 7.79 1.97 8.04c.49.25 7.3-7.3 7.55-7.88c.25-.57-1.07-3.04-1.07-6.32c0-3.28.74-4.92 1.39-5c.66-.08.49 2.3.98 4.35c.52 2.15 1.31 3.94 1.64 4.1c.33.16 4.33-4.91 4.33-4.91s-.68-1.92-.9-3.79s-.03-3.89.51-4.26c.59-.41 1.09 1.73 1.79 3.56c.56 1.46.83 1.96 1.15 2.35l7.24-6.89S40 74.76 40.76 84.05c.84 10.39 8.04 14.28 8.45 14.19c.41-.08 5.25-11.16 5.25-11.16s-1.71-1.57-2.98-3.94c-1.6-2.99-1.56-5.28-.96-5.66c.84-.53 2.05 2.79 3.28 4.27c1.23 1.48 1.97 2.3 2.22 2.3s3.82-7.8 3.82-7.8s-1.04-.61-1.82-1.82c-.66-1.02-1.25-2.78-.69-3.84c.6-.56 1.21.89 2.14 1.65c.93.76 1.64 1.14 1.64 1.14s3.77-6.48 5.25-9.52c1.49-3.07 3.01-6.36 3.01-6.36z" fill="#728137"></path><path d="M71.74 61.84c.46-.3 1.39-6.53 1.83-9.64c.4-2.8 1.38-6.99-.75-7.4c-1.46-.28-2.07 1.79-2.55 4.01c-.42 1.98-1.04 4.67-1.04 4.67s-1.89-3.63-3.16-5.84c-.92-1.6-2.9-4.97-4.48-3.96c-1.81 1.16.15 4.87 1.26 6.92s2.36 4.44 2.36 4.44s-3.34-1.14-5.29-1.74c-2.14-.66-4.99-1.24-5.39-.09c-.7 2 1.94 3 7.06 5.09c5.09 2.07 9.37 4.05 10.15 3.54z" fill="#bdcf47"></path><path d="M52.13 23.18c-.23 4.08.49 10.02 3.39 9.36c2.51-.56-.4-4.41-.37-9.28c.04-6.83 4.46-8.46 3.07-9.93c-1.13-1.2-5.72 3.22-6.09 9.85z" fill="#bdcf47"></path><path d="M35.24 34.21c2.75-.62 4.48-.53 4.54-1.19c.07-.85-.77-1.45-4.33-1.27c-3.27.16-6.57 1.02-9.77 3.19a25.978 25.978 0 0 0-4.89 4.3c-3.06 3.52-3.52 6.49-1.69 6.86c1.89.38 2.77-1.75 4.2-4.02c3.44-5.49 8.67-7.13 11.94-7.87z" fill="#bdcf47"></path><path d="M23.47 84.5c1.56-.06 1.51-1.55 1.55-5.4c.03-2.51-.08-5.77.98-8.99c1.43-4.33 3.64-7.08 6.17-9.4c2.78-2.55 5.71-4.08 7.36-4.82c3.15-1.43 1.68-2.7-.41-1.8c-2.08.9-9.16 3.47-13.78 10.51c-3.01 4.58-3.76 8.2-3.89 13.03c-.09 3.64.96 6.91 2.02 6.87z" fill="#bdcf47"></path><path d="M47.35 69.7c-1.27 0-3.6 6.01-3.43 12.06c.16 6.05 2.15 9.92 3.92 10.63c1.43.57 2.45-.94 1.92-3.27c-.35-1.52-2.25-3.97-2.62-7.93c-.37-3.97.33-8.3.53-9.36c.21-1.07.53-2.13-.32-2.13z" fill="#bdcf47"></path></g></svg>
-          </div>
-
-          <div class="palmera2Tecnologias">
+          <div class="palmeraHeader">
             <svg width="94px" height="94px" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--noto" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M72.05 51.72l-10.38 6.95s8.25 9.59 10.63 22.8c1.54 8.52 2.75 16.12 1.74 23.34c-.41 2.95-3.26 8.9-4.08 10.9s-2 6.71 1.65 7.65s15.54 1.3 17.31 1.06s3.86-1.52 2.91-5.79c-.59-2.65-1.59-10.94-2.18-16.59c-.59-5.65-.95-16.53-5.87-29.89c-4.79-13-11.73-20.43-11.73-20.43z" fill="#dc8124"></path><path d="M81.6 109.06c5.36.31 8.76-.72 8.76-.72l.73 5.43s-3.28.93-9.45.54c-5.39-.34-10.26-1.81-10.26-1.81l2.01-5.13c-.01-.01 2.81 1.38 8.21 1.69z" fill="#c0711f"></path><path d="M74.2 94.33s.1 1.51.15 2.46c.05.96.07 2.44.07 2.44s4.05.47 7.25.34c5.24-.21 7.6-1.46 7.6-1.46s-.09-1.17-.24-2.55c-.14-1.39-.31-2.53-.31-2.53s-2.57 1.27-7.97 1.62c-3.85.25-6.55-.32-6.55-.32z" fill="#c0711f"></path><path d="M72.13 80.57s2.46.5 7.04-.49c4.45-.97 6.36-2.66 6.36-2.66s.42 1.3.67 2.3c.23.93.59 2.29.59 2.29s-1.8 1.77-6.68 2.73c-4.79.95-7.17.3-7.17.3s-.23-1.28-.39-2.23c-.19-1.08-.42-2.24-.42-2.24z" fill="#c0711f"></path><path d="M69.6 72.12s2.27.15 6.68-1.51c3.85-1.45 5.5-3.39 5.5-3.39l-5.42-11.9l-12.99 4.72l6.23 12.08z" fill="#a2672b"></path><path d="M69.37 57.5s10.04 3.21 14.47 4.69c4.43 1.48 7.96 2.22 7.96 2.22s1.39-2.76 1.88-5.14c.33-1.58.26-4.06.94-4.01c1.12.08 1.93 1.98 1.98 4.56c.04 2.22-.54 5.52-.54 5.52l4.69 1.28s1.21-1.74 1.89-4.51c.71-2.9.35-4 1.06-4.2c.79-.22 2.28.81 2 5.39c-.17 2.79-.64 4.38-.5 4.49c.23.18 2.49 1.02 4.54 1.6c2.05.57 4.15.94 4.15.94s3.71-16.72-6.65-23.47c-12.96-8.45-29.62-.9-29.62-.9l12.21-9.64s-.88-2.18-1.95-3.84c-1.22-1.9-2.85-3.11-2.54-3.54c.42-.6 2.94-.6 5.09 1.4c1.81 1.69 3.18 3.44 3.24 3.49l3.59-2.59s-.35-2.35-1.3-3.84c-.92-1.45-2.32-2.8-1.97-3c.74-.42 3.04.31 4.49 1.72c1.25 1.22 2.26 3.11 2.26 3.11l7.3-5s-5.33-8.45-16.57-8.04s-17.31 7.63-19.2 9.76s-4.02 6.73-4.02 6.73l.21-12.75s-1.75-.4-3.43-.6c-2.53-.3-4.29.22-4.33-.03c-.13-.89 1.45-2.19 3.94-2.72c2.44-.51 4.41-.21 4.41-.21l2.06-11.92s-4.59-.37-9.71 2.06c-3.31 1.57-7.15 4.29-9.7 8.7c-5.65 9.75-.2 20.25-.2 20.25s-7.98-8.3-21.25-5.17c-14.55 3.43-18.22 19.4-17.4 19.4c2.22 0 10.32.38 10.73.05c.21-.16.77-2.41 2.1-4.44c1.32-2.03 3.09-3.74 4.54-3.74c.75 0-.26 1.51-1.15 3.69c-.9 2.22-1.4 4.69-1.4 4.69h7.22s1.52-7.31 4.06-7.83c1.09-.22.35 2.13.08 3.93c-.28 1.86-.44 3.91-.44 3.91l9.14.29s-11.75.71-19.9 8.15c-8.43 7.68-9.31 18.36-8.57 23.69s1.48 7.79 1.97 8.04c.49.25 7.3-7.3 7.55-7.88c.25-.57-1.07-3.04-1.07-6.32c0-3.28.74-4.92 1.39-5c.66-.08.49 2.3.98 4.35c.52 2.15 1.31 3.94 1.64 4.1c.33.16 4.33-4.91 4.33-4.91s-.68-1.92-.9-3.79s-.03-3.89.51-4.26c.59-.41 1.09 1.73 1.79 3.56c.56 1.46.83 1.96 1.15 2.35l7.24-6.89S40 74.76 40.76 84.05c.84 10.39 8.04 14.28 8.45 14.19c.41-.08 5.25-11.16 5.25-11.16s-1.71-1.57-2.98-3.94c-1.6-2.99-1.56-5.28-.96-5.66c.84-.53 2.05 2.79 3.28 4.27c1.23 1.48 1.97 2.3 2.22 2.3s3.82-7.8 3.82-7.8s-1.04-.61-1.82-1.82c-.66-1.02-1.25-2.78-.69-3.84c.6-.56 1.21.89 2.14 1.65c.93.76 1.64 1.14 1.64 1.14s3.77-6.48 5.25-9.52c1.49-3.07 3.01-6.36 3.01-6.36z" fill="#728137"></path><path d="M71.74 61.84c.46-.3 1.39-6.53 1.83-9.64c.4-2.8 1.38-6.99-.75-7.4c-1.46-.28-2.07 1.79-2.55 4.01c-.42 1.98-1.04 4.67-1.04 4.67s-1.89-3.63-3.16-5.84c-.92-1.6-2.9-4.97-4.48-3.96c-1.81 1.16.15 4.87 1.26 6.92s2.36 4.44 2.36 4.44s-3.34-1.14-5.29-1.74c-2.14-.66-4.99-1.24-5.39-.09c-.7 2 1.94 3 7.06 5.09c5.09 2.07 9.37 4.05 10.15 3.54z" fill="#bdcf47"></path><path d="M52.13 23.18c-.23 4.08.49 10.02 3.39 9.36c2.51-.56-.4-4.41-.37-9.28c.04-6.83 4.46-8.46 3.07-9.93c-1.13-1.2-5.72 3.22-6.09 9.85z" fill="#bdcf47"></path><path d="M35.24 34.21c2.75-.62 4.48-.53 4.54-1.19c.07-.85-.77-1.45-4.33-1.27c-3.27.16-6.57 1.02-9.77 3.19a25.978 25.978 0 0 0-4.89 4.3c-3.06 3.52-3.52 6.49-1.69 6.86c1.89.38 2.77-1.75 4.2-4.02c3.44-5.49 8.67-7.13 11.94-7.87z" fill="#bdcf47"></path><path d="M23.47 84.5c1.56-.06 1.51-1.55 1.55-5.4c.03-2.51-.08-5.77.98-8.99c1.43-4.33 3.64-7.08 6.17-9.4c2.78-2.55 5.71-4.08 7.36-4.82c3.15-1.43 1.68-2.7-.41-1.8c-2.08.9-9.16 3.47-13.78 10.51c-3.01 4.58-3.76 8.2-3.89 13.03c-.09 3.64.96 6.91 2.02 6.87z" fill="#bdcf47"></path><path d="M47.35 69.7c-1.27 0-3.6 6.01-3.43 12.06c.16 6.05 2.15 9.92 3.92 10.63c1.43.57 2.45-.94 1.92-3.27c-.35-1.52-2.25-3.97-2.62-7.93c-.37-3.97.33-8.3.53-9.36c.21-1.07.53-2.13-.32-2.13z" fill="#bdcf47"></path></g></svg>
             
           </div>
-    </div>
 
-  
+          <div class="palmera2Header">
+            <svg width="94px" height="94px" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--noto" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M72.05 51.72l-10.38 6.95s8.25 9.59 10.63 22.8c1.54 8.52 2.75 16.12 1.74 23.34c-.41 2.95-3.26 8.9-4.08 10.9s-2 6.71 1.65 7.65s15.54 1.3 17.31 1.06s3.86-1.52 2.91-5.79c-.59-2.65-1.59-10.94-2.18-16.59c-.59-5.65-.95-16.53-5.87-29.89c-4.79-13-11.73-20.43-11.73-20.43z" fill="#dc8124"></path><path d="M81.6 109.06c5.36.31 8.76-.72 8.76-.72l.73 5.43s-3.28.93-9.45.54c-5.39-.34-10.26-1.81-10.26-1.81l2.01-5.13c-.01-.01 2.81 1.38 8.21 1.69z" fill="#c0711f"></path><path d="M74.2 94.33s.1 1.51.15 2.46c.05.96.07 2.44.07 2.44s4.05.47 7.25.34c5.24-.21 7.6-1.46 7.6-1.46s-.09-1.17-.24-2.55c-.14-1.39-.31-2.53-.31-2.53s-2.57 1.27-7.97 1.62c-3.85.25-6.55-.32-6.55-.32z" fill="#c0711f"></path><path d="M72.13 80.57s2.46.5 7.04-.49c4.45-.97 6.36-2.66 6.36-2.66s.42 1.3.67 2.3c.23.93.59 2.29.59 2.29s-1.8 1.77-6.68 2.73c-4.79.95-7.17.3-7.17.3s-.23-1.28-.39-2.23c-.19-1.08-.42-2.24-.42-2.24z" fill="#c0711f"></path><path d="M69.6 72.12s2.27.15 6.68-1.51c3.85-1.45 5.5-3.39 5.5-3.39l-5.42-11.9l-12.99 4.72l6.23 12.08z" fill="#a2672b"></path><path d="M69.37 57.5s10.04 3.21 14.47 4.69c4.43 1.48 7.96 2.22 7.96 2.22s1.39-2.76 1.88-5.14c.33-1.58.26-4.06.94-4.01c1.12.08 1.93 1.98 1.98 4.56c.04 2.22-.54 5.52-.54 5.52l4.69 1.28s1.21-1.74 1.89-4.51c.71-2.9.35-4 1.06-4.2c.79-.22 2.28.81 2 5.39c-.17 2.79-.64 4.38-.5 4.49c.23.18 2.49 1.02 4.54 1.6c2.05.57 4.15.94 4.15.94s3.71-16.72-6.65-23.47c-12.96-8.45-29.62-.9-29.62-.9l12.21-9.64s-.88-2.18-1.95-3.84c-1.22-1.9-2.85-3.11-2.54-3.54c.42-.6 2.94-.6 5.09 1.4c1.81 1.69 3.18 3.44 3.24 3.49l3.59-2.59s-.35-2.35-1.3-3.84c-.92-1.45-2.32-2.8-1.97-3c.74-.42 3.04.31 4.49 1.72c1.25 1.22 2.26 3.11 2.26 3.11l7.3-5s-5.33-8.45-16.57-8.04s-17.31 7.63-19.2 9.76s-4.02 6.73-4.02 6.73l.21-12.75s-1.75-.4-3.43-.6c-2.53-.3-4.29.22-4.33-.03c-.13-.89 1.45-2.19 3.94-2.72c2.44-.51 4.41-.21 4.41-.21l2.06-11.92s-4.59-.37-9.71 2.06c-3.31 1.57-7.15 4.29-9.7 8.7c-5.65 9.75-.2 20.25-.2 20.25s-7.98-8.3-21.25-5.17c-14.55 3.43-18.22 19.4-17.4 19.4c2.22 0 10.32.38 10.73.05c.21-.16.77-2.41 2.1-4.44c1.32-2.03 3.09-3.74 4.54-3.74c.75 0-.26 1.51-1.15 3.69c-.9 2.22-1.4 4.69-1.4 4.69h7.22s1.52-7.31 4.06-7.83c1.09-.22.35 2.13.08 3.93c-.28 1.86-.44 3.91-.44 3.91l9.14.29s-11.75.71-19.9 8.15c-8.43 7.68-9.31 18.36-8.57 23.69s1.48 7.79 1.97 8.04c.49.25 7.3-7.3 7.55-7.88c.25-.57-1.07-3.04-1.07-6.32c0-3.28.74-4.92 1.39-5c.66-.08.49 2.3.98 4.35c.52 2.15 1.31 3.94 1.64 4.1c.33.16 4.33-4.91 4.33-4.91s-.68-1.92-.9-3.79s-.03-3.89.51-4.26c.59-.41 1.09 1.73 1.79 3.56c.56 1.46.83 1.96 1.15 2.35l7.24-6.89S40 74.76 40.76 84.05c.84 10.39 8.04 14.28 8.45 14.19c.41-.08 5.25-11.16 5.25-11.16s-1.71-1.57-2.98-3.94c-1.6-2.99-1.56-5.28-.96-5.66c.84-.53 2.05 2.79 3.28 4.27c1.23 1.48 1.97 2.3 2.22 2.3s3.82-7.8 3.82-7.8s-1.04-.61-1.82-1.82c-.66-1.02-1.25-2.78-.69-3.84c.6-.56 1.21.89 2.14 1.65c.93.76 1.64 1.14 1.64 1.14s3.77-6.48 5.25-9.52c1.49-3.07 3.01-6.36 3.01-6.36z" fill="#728137"></path><path d="M71.74 61.84c.46-.3 1.39-6.53 1.83-9.64c.4-2.8 1.38-6.99-.75-7.4c-1.46-.28-2.07 1.79-2.55 4.01c-.42 1.98-1.04 4.67-1.04 4.67s-1.89-3.63-3.16-5.84c-.92-1.6-2.9-4.97-4.48-3.96c-1.81 1.16.15 4.87 1.26 6.92s2.36 4.44 2.36 4.44s-3.34-1.14-5.29-1.74c-2.14-.66-4.99-1.24-5.39-.09c-.7 2 1.94 3 7.06 5.09c5.09 2.07 9.37 4.05 10.15 3.54z" fill="#bdcf47"></path><path d="M52.13 23.18c-.23 4.08.49 10.02 3.39 9.36c2.51-.56-.4-4.41-.37-9.28c.04-6.83 4.46-8.46 3.07-9.93c-1.13-1.2-5.72 3.22-6.09 9.85z" fill="#bdcf47"></path><path d="M35.24 34.21c2.75-.62 4.48-.53 4.54-1.19c.07-.85-.77-1.45-4.33-1.27c-3.27.16-6.57 1.02-9.77 3.19a25.978 25.978 0 0 0-4.89 4.3c-3.06 3.52-3.52 6.49-1.69 6.86c1.89.38 2.77-1.75 4.2-4.02c3.44-5.49 8.67-7.13 11.94-7.87z" fill="#bdcf47"></path><path d="M23.47 84.5c1.56-.06 1.51-1.55 1.55-5.4c.03-2.51-.08-5.77.98-8.99c1.43-4.33 3.64-7.08 6.17-9.4c2.78-2.55 5.71-4.08 7.36-4.82c3.15-1.43 1.68-2.7-.41-1.8c-2.08.9-9.16 3.47-13.78 10.51c-3.01 4.58-3.76 8.2-3.89 13.03c-.09 3.64.96 6.91 2.02 6.87z" fill="#bdcf47"></path><path d="M47.35 69.7c-1.27 0-3.6 6.01-3.43 12.06c.16 6.05 2.15 9.92 3.92 10.63c1.43.57 2.45-.94 1.92-3.27c-.35-1.52-2.25-3.97-2.62-7.93c-.37-3.97.33-8.3.53-9.36c.21-1.07.53-2.13-.32-2.13z" fill="#bdcf47"></path></g></svg>
+            
+          </div>
+
+        
+
+    
+        </header>
+
+        
+    
         </>
+
     )
 }

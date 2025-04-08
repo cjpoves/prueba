@@ -52,7 +52,7 @@ export const KidAnimated = () => {
 
 
   function Kid() {
-    const { scene } = useGLTF(Kid3D , true); 
+    const { scene } = useGLTF(Kid3D); 
   
     return (  <> 
     <primitive object={scene}
@@ -66,7 +66,7 @@ export const KidAnimated = () => {
   ); }
 
   function ThinkEmoji() {
-    const { scene } = useGLTF(Emoji , true); 
+    const { scene } = useGLTF(Emoji); 
   
     return (  <> 
     <primitive object={scene}
@@ -80,7 +80,7 @@ export const KidAnimated = () => {
   ); }
 
   function Astronaut() {
-    const { scene } = useGLTF(AstronautModel , true); 
+    const { scene } = useGLTF(AstronautModel); 
   
     return (  <> 
     <primitive object={scene}
@@ -95,7 +95,7 @@ export const KidAnimated = () => {
   ); }
 
   function CR7() {
-    const { scene } = useGLTF(CR7Model , true); 
+    const { scene } = useGLTF(CR7Model); 
   
     return (  <> 
     <primitive object={scene}

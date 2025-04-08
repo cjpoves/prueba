@@ -1,6 +1,8 @@
 .MiHistoriaContenedor {
-background-color: rgb(43, 99, 204);
-display: grid;
+    padding: 2rem;
+    background-color: rgb(12, 136, 167);
+    color: white;
+    text-align: center;
 }
 
 .historiaContenedor {
@@ -9,16 +11,69 @@ justify-content: center;
 gap: 40px;
 }
 
-.textoHistoria {
-    max-width: 500px;
-    text-align: center;
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
+.descripcionContenedor {
+  background-color: red;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  max-width: 450px;
+
 }
 
-@media(max-width:900px) {
-    .historiaContenedor {
-        display: grid;
-        }
+@media(max-width:500px) {
+    .descripcionContenedor {
+       max-width: 250px;
+       font-size: small;
+      }
 }
+
+
+
+.carouselHistoria {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .carousel-trackHistoria {
+    width: 80%;
+  min-height: 400px; /* para evitar "jumps" */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  }
+  
+  .historia-icon {
+    display: none;
+  transition: opacity 0.5s ease;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  }
+
+  .historia-icon.active {
+    display: flex;
+  }
+  
+  .arrowHistoria {
+    background-color: #444;
+    color: white;
+    font-size: 2rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .arrowHistoria:hover:not(.disabled) {
+    background-color: #666;
+  }
+  
+  .arrowHistoria.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }

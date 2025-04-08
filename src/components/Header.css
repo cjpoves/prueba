@@ -1,0 +1,84 @@
+header{
+    padding: 80px;
+    display: grid;
+    min-height: 500px;
+  background: linear-gradient(to top, #ffcd58 0%, #E0FBFE 30%, #6eb5ee 80%);
+  border-radius: 40px;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+    justify-items: center;
+  }
+  
+  .palmeraHeader {
+    position: absolute;
+    bottom: 10px;
+    right: 50px;
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: vientoTronco 6s infinite ease-in-out;
+    transform-origin: bottom;
+  }
+
+  .palmera2Header {
+    position: absolute;
+    bottom: 10px;
+    right: 150px;
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: vientoTronco 6s infinite ease-in-out;
+    transform-origin: bottom;
+ 
+}
+  
+.sunMorning{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    
+  }
+  
+  @keyframes vientoTronco {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(2.5deg);
+    }
+  }
+
+  @media(max-width:500px) {
+    header {
+      display: grid;
+     min-height: 500px;
+
+    }
+    .tituloContenedor{
+      max-width: 300px;
+      max-height: 300px;
+
+    }
+  }
+
+  .tituloContenedor {
+    background-color: #228AB0;
+    border-radius: 10px;
+    opacity: 0.8;
+    width: 350px;
+    display: grid;
+    align-items: center;
+    height: 350px;
+    color: white;
+    margin-top: 30px;
+  }
+
+  .islandAnimation {
+padding: 20px;
+height: 400px;
+width: 400px;
+
+}

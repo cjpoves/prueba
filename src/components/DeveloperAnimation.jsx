@@ -78,7 +78,7 @@ export const DeveloperAnimation = () => {
      
 
         function Desk() {
-          const { scene } = useGLTF(DeskModel , true); 
+          const { scene } = useGLTF(DeskModel); 
         
           return (  <> 
           <primitive object={scene}
@@ -94,7 +94,7 @@ export const DeveloperAnimation = () => {
         ); }
 
         function Cat() {
-            const { scene } = useGLTF(CatModel , true); 
+            const { scene } = useGLTF(CatModel); 
           
             return (  <> 
             <primitive object={scene}
@@ -110,7 +110,7 @@ export const DeveloperAnimation = () => {
           ); }
 
           function Keyblade() {
-            const { scene } = useGLTF(KeybladeModel , true); 
+            const { scene } = useGLTF(KeybladeModel); 
           
             return (  <> 
             <primitive object={scene}
@@ -124,7 +124,7 @@ export const DeveloperAnimation = () => {
             </>  
           ); }
           function Rose() {
-            const { scene } = useGLTF(RoseModel , true); 
+            const { scene } = useGLTF(RoseModel); 
           
             return (  <> 
             <primitive object={scene}
@@ -139,7 +139,7 @@ export const DeveloperAnimation = () => {
           ); }
 
           function Character() {
-            const { scene } = useGLTF(CharacterModel , true); 
+            const { scene } = useGLTF(CharacterModel); 
           
             return (  <> 
             <primitive object={scene}
